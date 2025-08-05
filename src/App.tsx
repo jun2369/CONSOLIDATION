@@ -537,7 +537,7 @@ const App: React.FC = () => {
                     fontSize: '14px',
                     marginBottom: '10px'
                   }}>
-                    共找到 {batchesWithAWBs.length} 个批次，包含 {details.length} 个AWB
+                    共找到 {batchesWithAWBs.length} 个批次，包含 {new Set(details.map(d => d.awb)).size} 个AWB
                   </div>
 
                   <button
