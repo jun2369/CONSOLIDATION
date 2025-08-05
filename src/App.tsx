@@ -26,7 +26,7 @@ const App: React.FC = () => {
   const [error, setError] = useState<string>('');
   const [batchesWithAWBs, setBatchesWithAWBs] = useState<BatchWithAWB[]>([]);
   const [details, setDetails] = useState<ColoredBatch[]>([]);
-  const [showDetails, setShowDetails] = useState(false);
+  
   const [xlsxLoaded, setXlsxLoaded] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -645,7 +645,7 @@ const App: React.FC = () => {
                             const sortedStats = Array.from(awbStats.entries())
                               .sort((a, b) => b[1].count - a[1].count); // 按批次数量降序排序
                             
-                            return sortedStats.map(([awb, stats], index) => (
+                            return sortedStats.map(([awb, stats]) => (
                               <tr key={awb}>
                                 <td style={{
                                   padding: '8px 10px',
